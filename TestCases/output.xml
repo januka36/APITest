@@ -1,69 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 12:13:21.756" rpa="false" schemaversion="4">
-<suite id="s1" name="Test Case Get" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_get.robot">
-<test id="s1-t1" name="TC_001_Get_Request_Fethch_Status_Code" line="11">
+<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 15:02:29.290" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Case Get Validation" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_get_validation.robot">
+<test id="s1-t1" name="TC_001_Get_Request_Fethch_And_Validate_Content" line="14">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>API_Testing</arg>
 <arg>${API_Base_Endpoint}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231101 12:13:21.851" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231101 12:13:21.851" endtime="20231101 12:13:21.851"/>
+<msg timestamp="20231101 15:02:29.460" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231101 15:02:29.460" endtime="20231101 15:02:29.460"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${Get_Response}</var>
 <arg>API_Testing</arg>
-<arg>api/vehicles/GetManufacturerDetails/jskks</arg>
+<arg>api/vehicles/GetMakeForManufacturer/988</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20231101 12:13:22.334" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/jskks 
- path_url=/api/vehicles/GetManufacturerDetails/jskks 
+<msg timestamp="20231101 15:02:30.837" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/988 
+ path_url=/api/vehicles/GetMakeForManufacturer/988 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20231101 12:13:22.334" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/jskks 
+<msg timestamp="20231101 15:02:30.845" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/988 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/xml', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '194', 'Date': 'Wed, 01 Nov 2023 06:43:23 GMT', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
- body=&lt;Reponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;0&lt;/Count&gt;&lt;Message&gt;Response returned successfully&lt;/Message&gt;&lt;Results /&gt;&lt;/Reponse&gt; 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/xml', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '508', 'Date': 'Wed, 01 Nov 2023 09:32:31 GMT', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
+ body=&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt; 
  </msg>
-<msg timestamp="20231101 12:13:22.334" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20231101 15:02:30.845" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20231101 12:13:22.334" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231101 12:13:21.851" endtime="20231101 12:13:22.334"/>
+<msg timestamp="20231101 15:02:30.845" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231101 15:02:29.460" endtime="20231101 15:02:30.845"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${Get_Response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231101 12:13:22.334" endtime="20231101 12:13:22.334"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${Get_Response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231101 12:13:22.334" endtime="20231101 12:13:22.334"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${StatusCode}</var>
-<arg>${Get_Response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231101 12:13:22.349" level="INFO">${StatusCode} = 200</msg>
-<status status="PASS" starttime="20231101 12:13:22.334" endtime="20231101 12:13:22.349"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${StatusCode}</arg>
 <arg>200</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231101 12:13:22.350" endtime="20231101 12:13:22.351"/>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231101 15:02:30.853" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
 </kw>
-<status status="PASS" starttime="20231101 12:13:21.851" endtime="20231101 12:13:22.351"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Get_Response_Content}</var>
+<arg>${Get_Response.content}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231101 15:02:30.853" level="INFO">${Get_Response_Content} = &lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacture...</msg>
+<status status="PASS" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${json_response}</var>
+<arg>json.loads('''${Get_Response_Content}''')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231101 15:02:30.853" level="FAIL">Evaluating expression 'json.loads('''&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt;''')' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</msg>
+<status status="FAIL" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${json_response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+</kw>
+<status status="FAIL" starttime="20231101 15:02:29.460" endtime="20231101 15:02:30.853">Evaluating expression 'json.loads('''&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt;''')' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</status>
 </test>
-<status status="PASS" starttime="20231101 12:13:21.756" endtime="20231101 12:13:22.354"/>
+<status status="FAIL" starttime="20231101 15:02:29.291" endtime="20231101 15:02:30.853"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Case Get">Test Case Get</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Case Get Validation">Test Case Get Validation</stat>
 </suite>
 </statistics>
 <errors>
