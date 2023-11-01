@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 11:52:08.449" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Case Get" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_get.robot">
+<test id="s1-t1" name="TC_001_Get_Request_Fethch_Status_Code" line="11">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API_Testing</arg>
+<arg>${API_Base_Endpoint}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231101 11:52:08.550" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231101 11:52:08.550" endtime="20231101 11:52:08.550"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<arg>API_Testing</arg>
+<arg>api/vehicles/GetManufacturerDetails/500</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231101 11:52:09.790" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/500 
+ path_url=/api/vehicles/GetManufacturerDetails/500 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231101 11:52:09.798" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/500 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/xml', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '194', 'Date': 'Wed, 01 Nov 2023 06:22:10 GMT', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
+ body=&lt;Reponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;0&lt;/Count&gt;&lt;Message&gt;Response returned successfully&lt;/Message&gt;&lt;Results /&gt;&lt;/Reponse&gt; 
+ </msg>
+<msg timestamp="20231101 11:52:09.798" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<status status="PASS" starttime="20231101 11:52:08.550" endtime="20231101 11:52:09.799"/>
+</kw>
+<status status="PASS" starttime="20231101 11:52:08.550" endtime="20231101 11:52:09.799"/>
+</test>
+<status status="PASS" starttime="20231101 11:52:08.449" endtime="20231101 11:52:09.801"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Case Get">Test Case Get</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
