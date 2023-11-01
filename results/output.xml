@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 12:22:16.888" rpa="false" schemaversion="4">
+<suite id="s1" name="APITest" source="C:\Users\januk\Desktop\APITest">
+<suite id="s1-s1" name="TestCases" source="C:\Users\januk\Desktop\APITest\TestCases">
+<suite id="s1-s1-s1" name="Test Case Get" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_get.robot">
+<test id="s1-s1-s1-t1" name="TC_001_Get_Request_Fethch_Status_Code" line="11">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API_Testing</arg>
+<arg>${API_Base_Endpoint}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231101 12:22:17.042" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231101 12:22:17.042" endtime="20231101 12:22:17.042"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Get_Response}</var>
+<arg>API_Testing</arg>
+<arg>api/vehicles/GetManufacturerDetails/878</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231101 12:22:17.566" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/878 
+ path_url=/api/vehicles/GetManufacturerDetails/878 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231101 12:22:17.574" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/878 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/xml', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '194', 'Date': 'Wed, 01 Nov 2023 06:52:18 GMT', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
+ body=&lt;Reponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;0&lt;/Count&gt;&lt;Message&gt;Response returned successfully&lt;/Message&gt;&lt;Results /&gt;&lt;/Reponse&gt; 
+ </msg>
+<msg timestamp="20231101 12:22:17.574" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231101 12:22:17.576" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231101 12:22:17.042" endtime="20231101 12:22:17.576"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Get_Response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231101 12:22:17.576" endtime="20231101 12:22:17.576"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Get_Response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231101 12:22:17.576" endtime="20231101 12:22:17.576"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${StatusCode}</var>
+<arg>${Get_Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20231101 12:22:17.576" level="INFO">${StatusCode} = 200</msg>
+<status status="PASS" starttime="20231101 12:22:17.576" endtime="20231101 12:22:17.576"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${StatusCode}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231101 12:22:17.576" endtime="20231101 12:22:17.576"/>
+</kw>
+<status status="PASS" starttime="20231101 12:22:17.037" endtime="20231101 12:22:17.576"/>
+</test>
+<status status="PASS" starttime="20231101 12:22:16.939" endtime="20231101 12:22:17.576"/>
+</suite>
+<status status="PASS" starttime="20231101 12:22:16.921" endtime="20231101 12:22:17.587"/>
+</suite>
+<status status="PASS" starttime="20231101 12:22:16.904" endtime="20231101 12:22:17.589"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="APITest">APITest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestCases">APITest.TestCases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test Case Get">APITest.TestCases.Test Case Get</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
