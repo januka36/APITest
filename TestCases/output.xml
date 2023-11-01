@@ -1,74 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 15:02:29.290" rpa="false" schemaversion="4">
-<suite id="s1" name="Test Case Get Validation" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_get_validation.robot">
+<robot generator="Robot 6.1.1 (Python 3.10.2 on win32)" generated="20231101 15:53:48.100" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Case Validation 2" source="C:\Users\januk\Desktop\APITest\TestCases\test_case_validation_2.robot">
 <test id="s1-t1" name="TC_001_Get_Request_Fethch_And_Validate_Content" line="14">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>API_Testing</arg>
 <arg>${API_Base_Endpoint}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231101 15:02:29.460" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231101 15:02:29.460" endtime="20231101 15:02:29.460"/>
+<msg timestamp="20231101 15:53:48.280" level="INFO">Creating Session using : alias=API_Testing, url=https://vpic.nhtsa.dot.gov/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231101 15:53:48.280" endtime="20231101 15:53:48.280"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${Get_Response}</var>
 <arg>API_Testing</arg>
-<arg>api/vehicles/GetMakeForManufacturer/988</arg>
+<arg>url=api/vehicles/GetManufacturerDetails/honda?format=json</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20231101 15:02:30.837" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/988 
- path_url=/api/vehicles/GetMakeForManufacturer/988 
+<msg timestamp="20231101 15:53:49.194" level="INFO">GET Request : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/honda?format=json 
+ path_url=/api/vehicles/GetManufacturerDetails/honda?format=json 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20231101 15:02:30.845" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/988 
+<msg timestamp="20231101 15:53:49.194" level="INFO">GET Response : url=https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/honda?format=json 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/xml', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '508', 'Date': 'Wed, 01 Nov 2023 09:32:31 GMT', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
- body=&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt; 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json', 'Content-Encoding': 'gzip', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'Request-Context': 'appId=cid-v1:39f1cd0a-de7e-435f-bf7d-39de930d88c6', 'Access-Control-Expose-Headers': 'Request-Context', 'X-AspNetmvc-Version': '5.2.9', 'Content-Length': '3288', 'Date': 'Wed, 01 Nov 2023 10:23:50 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains ; preload'} 
+ body={"Count":13,"Message":"Response returned successfully","SearchCriteria":null,"Results":[{"Address":"2-1-1 Minami-Aoyama, Minato-ku","Address2":null,"City":"Tokyo","ContactEmail":"","ContactFax":null,"ContactPhone":null,"Country":"JAPAN","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1441217874880-0400)\/","ManufacturerTypes":[{"Name":"Completed Vehicle Manufacturer"}],"Mfr_CommonName":"Honda","Mfr_ID":987,"Mfr_Name":"HONDA MOTOR CO., LTD","OtherManufacturerDetails":"Truck is another product.","PostalCode":"107-8556","PrimaryProduct":null,"PrincipalFirstName":"Koichi Kondo","PrincipalLastName":null,"PrincipalPosition":"CEO","StateProvince":"Musashi","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[{"GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)","GVWRTo":"Class 1: 6,000 lb or less (2,722 kg or less)","IsPrimary":false,"Name":"Motorcycle"},{"GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)","GVWRTo":"Class 1: 6,000 lb or less (2,722 kg or less)","IsPrimary":false,"Name":"Passenger Car"},{"GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)","GVWRTo":"Class 2: 6,001 - 10,000 lb (2,722 - 4,536 kg)","IsPrimary":false,"Name":"Multipurpose Passenger Vehicle (MPV)"}]},{"Address":"1919 Torrance Blvd.","Address2":null,"City":"Torrance","ContactEmail":"jeff_chang@na.honda.com","ContactFax":null,"ContactPhone":"(310)783-3401","Country":"UNITED STATES (USA)","DBAs":"HONDA DEVELOPMENT &amp; MANUFACTURING OF AMERICA, LLC","EquipmentItems":[],"LastUpdated":"\/Date(1637257639330-0500)\/","ManufacturerTypes":[{"Name":"Completed Vehicle Manufacturer"}],"Mfr_CommonName":"Honda","Mfr_ID":988,"Mfr_Name":"AMERICAN HONDA MOTOR CO., INC.","OtherManufacturerDetails":null,"PostalCode":"90501","PrimaryProduct":null,"PrincipalFirstName":"Noriya Kaihara","PrincipalLastName":null,"PrincipalPosition":"President &amp; CEO","StateProvince":"CALIFORNIA","SubmittedName":"Wilson Tran","SubmittedOn":"\/Date(1637201165580-0500)\/","SubmittedPosition":"Sr. Specialist, II","VehicleTypes":[{"GVWRFrom":"Class 1A: 3,000 lb or less (1,360 kg or less)","GVWRTo":"Class 1D: 5,001 - 6,000 lb (2,268 - 2,722 kg)","IsPrimary":true,"Name":"Passenger Car"},{"GVWRFrom":"Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)","GVWRTo":"Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)","IsPrimary":false,"Name":"Truck"},{"GVWRFrom":"Class 1B: 3,001 - 4,000 lb (1,360 - 1,814 kg)","GVWRTo":"Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)","IsPrimary":false,"Name":"Multipurpose Passenger Vehicle (MPV)"}]},{"Address":"4700 Tottenham Road","Address2":null,"City":"Alliston","ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"CANADA","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(-2208970800000-0500)\/","ManufacturerTypes":[],"Mfr_CommonName":"Honda","Mfr_ID":990,"Mfr_Name":"HONDA OF CANADA MFG., INC.","OtherManufacturerDetails":"Truck is another product.","PostalCode":" L9R 1A2","PrimaryProduct":null,"PrincipalFirstName":null,"PrincipalLastName":null,"PrincipalPosition":null,"StateProvince":"Ontario","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":" North Building, Highworth Road","Address2":" South Marston","City":"Swindon","ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"UNITED KINGDOM (UK)","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(-2208970800000-0500)\/","ManufacturerTypes":[],"Mfr_CommonName":"Honda","Mfr_ID":991,"Mfr_Name":"HONDA OF THE U.K. MFG., LTD.","OtherManufacturerDetails":null,"PostalCode":"SN3 4TZ","PrimaryProduct":null,"PrincipalFirstName":null,"PrincipalLastName":null,"PrincipalPosition":null,"StateProvince":"Wiltshire ","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"7250 Corredor Industria ","Address2":null,"City":"El Salto","ContactEmail":"","ContactFax":null,"ContactPhone":null,"Country":"MEXICO","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1441217522583-0400)\/","ManufacturerTypes":[],"Mfr_CommonName":"Honda","Mfr_ID":992,"Mfr_Name":"HONDA DE MEXICO","OtherManufacturerDetails":null,"PostalCode":"45680","PrimaryProduct":null,"PrincipalFirstName":"Koichi Kondo","PrincipalLastName":null,"PrincipalPosition":"CEO","StateProvince":"Jalisco","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"410 Ladkrabang Industrial Estate, Chalongkrung Road","Address2":"Lamplatue, Ladkrabang","City":"Bangkok","ContactEmail":"niwatcha@honda.th.com","ContactFax":null,"ContactPhone":"+66-89-922-8308","Country":"THAILAND","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1667314987147-0400)\/","ManufacturerTypes":[{"Name":"Completed Vehicle Manufacturer"}],"Mfr_CommonName":"Honda","Mfr_ID":14337,"Mfr_Name":"THAI HONDA CO., LTD.","OtherManufacturerDetails":null,"PostalCode":"10520","PrimaryProduct":null,"PrincipalFirstName":"Kenichi Uno","PrincipalLastName":null,"PrincipalPosition":"Vice President","StateProvince":"Bangkok","SubmittedName":"wilson tran","SubmittedOn":"\/Date(1654103621370-0400)\/","SubmittedPosition":"Sr. Safety Specialist","VehicleTypes":[{"GVWRFrom":"Class 1A: 3,000 lb or less (1,360 kg or less)","GVWRTo":"Class 1A: 3,000 lb or less (1,360 kg or less)","IsPrimary":true,"Name":"Motorcycle"}]},{"Address":"Phuc Thang ward","Address2":null,"City":"Phuc Yen town","ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"VIETNAM","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1456836335247-0500)\/","ManufacturerTypes":[],"Mfr_CommonName":null,"Mfr_ID":14691,"Mfr_Name":"HONDA VIETNAM CO., LTD.","OtherManufacturerDetails":null,"PostalCode":null,"PrimaryProduct":null,"PrincipalFirstName":"Masayuki Igarashi","PrincipalLastName":null,"PrincipalPosition":"General Director","StateProvince":"Vinh Phuc province","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"Rua Jurua, 160 - Dist.","Address2":"Industrial Marechal Castelo Branco - C.P.324","City":null,"ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"BRAZIL","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1457627948787-0500)\/","ManufacturerTypes":[],"Mfr_CommonName":null,"Mfr_ID":14782,"Mfr_Name":"MOTO HONDA DA AMAZONIA LTDA.","OtherManufacturerDetails":null,"PostalCode":null,"PrimaryProduct":null,"PrincipalFirstName":"Issao Mizoguchi","PrincipalLastName":null,"PrincipalPosition":"President","StateProvince":"Manaus-AM-CEP 69075120","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"No. 118 Jiasong Middle Road","Address2":null,"City":"Qingpu Shanghai","ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"CHINA","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1509646743520-0400)\/","ManufacturerTypes":[],"Mfr_CommonName":"Honda","Mfr_ID":14790,"Mfr_Name":"SUNDIRO HONDA MOTORCYCLE CO., LTD.","OtherManufacturerDetails":null,"PostalCode":"107-8556","PrimaryProduct":null,"PrincipalFirstName":"Kobayashi Taro","PrincipalLastName":null,"PrincipalPosition":"President","StateProvince":"Huaxin","SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"Carrer Del Mar Del Nord1-Poligono Indust. Can Roca La Torre Del Rector Santa","Address2":"Perpetua De Mogoda ","City":"Barcelona ","ContactEmail":null,"ContactFax":null,"ContactPhone":null,"Country":"SPAIN","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1509646828663-0400)\/","ManufacturerTypes":[],"Mfr_CommonName":"Montesa Honda","Mfr_ID":15171,"Mfr_Name":"MONTESA HONDA SA","OtherManufacturerDetails":null,"PostalCode":"08130","PrimaryProduct":null,"PrincipalFirstName":null,"PrincipalLastName":null,"PrincipalPosition":null,"StateProvince":null,"SubmittedName":null,"SubmittedOn":null,"SubmittedPosition":null,"VehicleTypes":[]},{"Address":"Via Genova 9\/11","Address2":null,"City":"Atessa","ContactEmail":"francesco.simone@honda-eu.com","ContactFax":null,"ContactPhone":"+390872 899994","Country":"ITALY","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1643209419500-0500)\/","ManufacturerTypes":[{"Name":"Completed Vehicle Manufacturer"}],"Mfr_CommonName":"Honda","Mfr_ID":21282,"Mfr_Name":"HONDA ITALIA INDUSTRIALE, S.P.A.","OtherManufacturerDetails":null,"PostalCode":"66041","PrimaryProduct":null,"PrincipalFirstName":"Marcello Vinciguerra","PrincipalLastName":null,"PrincipalPosition":"Director","StateProvince":"Chieti","SubmittedName":"wilson tran","SubmittedOn":"\/Date(1625023745477-0400)\/","SubmittedPosition":"sr safety specialist","VehicleTypes":[{"GVWRFrom":"Class 1A: 3,000 lb or less (1,360 kg or less)","GVWRTo":"Class 1A: 3,000 lb or less (1,360 kg or less)","IsPrimary":false,"Name":"Motorcycle"}]},{"Address":"No. 1, Xinxin 6th Road, Yonghe","Address2":"Xintang Town Zengcheng City","City":"Guangzhou","ContactEmail":"joe_zou@wuyang-honda.com","ContactFax":null,"ContactPhone":"+86 20 3298 9597","Country":"CHINA","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1644877253887-0500)\/","ManufacturerTypes":[{"Name":"Completed Vehicle Manufacturer"}],"Mfr_CommonName":"Honda","Mfr_ID":21332,"Mfr_Name":"WUYANG-HONDA MOTORS CO., LTD.","OtherManufacturerDetails":null,"PostalCode":"511300","PrimaryProduct":null,"PrincipalFirstName":"Koichi Abe","PrincipalLastName":null,"PrincipalPosition":"Vice President","StateProvince":"Guangdong","SubmittedName":"wilson tran","SubmittedOn":"\/Date(1625022820600-0400)\/","SubmittedPosition":"senior safety specialist","VehicleTypes":[{"GVWRFrom":"Class 1A: 3,000 lb or less (1,360 kg or less)","GVWRTo":"Class 1A: 3,000 lb or less (1,360 kg or less)","IsPrimary":true,"Name":"Motorcycle"}]},{"Address":"10202 Washington Blvd.","Address2":null,"City":"Culver City","ContactEmail":"takeshi.oshima@sony-honda-mobility.com","ContactFax":null,"ContactPhone":"(650)279-0822","Country":"UNITED STATES (USA)","DBAs":null,"EquipmentItems":[],"LastUpdated":"\/Date(1693921820577-0400)\/","ManufacturerTypes":[{"Name":"Completed Vehi... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20231101 15:02:30.845" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20231101 15:53:49.195" level="INFO">C:\Users\januk\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'vpic.nhtsa.dot.gov'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20231101 15:02:30.845" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231101 15:02:29.460" endtime="20231101 15:02:30.845"/>
-</kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${Get_Response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20231101 15:02:30.853" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+<msg timestamp="20231101 15:53:49.196" level="INFO">${Get_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231101 15:53:48.280" endtime="20231101 15:53:49.196"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${Get_Response_Content}</var>
 <arg>${Get_Response.content}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231101 15:02:30.853" level="INFO">${Get_Response_Content} = &lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacture...</msg>
-<status status="PASS" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+<msg timestamp="20231101 15:53:49.197" level="INFO">${Get_Response_Content} = {"Count":13,"Message":"Response returned successfully","SearchCriteria":null,"Results":[{"Address":"2-1-1 Minami-Aoyama, Minato-ku","Address2":null,"City":"Tokyo","ContactEmail":"","ContactFax":null,"...</msg>
+<status status="PASS" starttime="20231101 15:53:49.196" endtime="20231101 15:53:49.197"/>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
+<kw name="Set Variable" library="BuiltIn">
 <var>${json_response}</var>
-<arg>json.loads('''${Get_Response_Content}''')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231101 15:02:30.853" level="FAIL">Evaluating expression 'json.loads('''&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt;''')' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</msg>
-<status status="FAIL" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+<arg>${Get_Response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231101 15:53:49.199" level="INFO">${json_response} = {'Count': 13, 'Message': 'Response returned successfully', 'SearchCriteria': None, 'Results': [{'Address': '2-1-1 Minami-Aoyama, Minato-ku', 'Address2': None, 'City': 'Tokyo', 'ContactEmail': '', 'Con...</msg>
+<status status="PASS" starttime="20231101 15:53:49.198" endtime="20231101 15:53:49.199"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>@{res1}</var>
 <arg>${json_response}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231101 15:02:30.853" endtime="20231101 15:02:30.853"/>
+<arg>Results</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20231101 15:53:49.217" level="INFO">@{res1} = [ [{'Address': '2-1-1 Minami-Aoyama, Minato-ku', 'Address2': None, 'City': 'Tokyo', 'ContactEmail': '', 'ContactFax': None, 'ContactPhone': None, 'Country': 'JAPAN', 'DBAs': None, 'EquipmentItems': []...</msg>
+<status status="PASS" starttime="20231101 15:53:49.199" endtime="20231101 15:53:49.217"/>
 </kw>
-<status status="FAIL" starttime="20231101 15:02:29.460" endtime="20231101 15:02:30.853">Evaluating expression 'json.loads('''&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;Message&gt;Results returned successfully&lt;/Message&gt;&lt;SearchCriteria&gt;Manufacturer:988&lt;/SearchCriteria&gt;&lt;Results&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;474&lt;/Make_ID&gt;&lt;Make_Name&gt;HONDA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;MakesForMfg&gt;&lt;Mfr_Name&gt;AMERICAN HONDA MOTOR CO., INC.&lt;/Mfr_Name&gt;&lt;Make_ID&gt;475&lt;/Make_ID&gt;&lt;Make_Name&gt;ACURA&lt;/Make_Name&gt;&lt;/MakesForMfg&gt;&lt;/Results&gt;&lt;/Response&gt;''')' failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)</status>
+<kw name="Get From List" library="Collections">
+<var>${get_from_list_1}</var>
+<arg>${res1}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231101 15:53:49.217" level="INFO">${get_from_list_1} = [{'Address': '2-1-1 Minami-Aoyama, Minato-ku', 'Address2': None, 'City': 'Tokyo', 'ContactEmail': '', 'ContactFax': None, 'ContactPhone': None, 'Country': 'JAPAN', 'DBAs': None, 'EquipmentItems': [], ...</msg>
+<status status="PASS" starttime="20231101 15:53:49.217" endtime="20231101 15:53:49.217"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${get_from_list_2}</var>
+<arg>${get_from_list_1}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231101 15:53:49.217" level="INFO">${get_from_list_2} = {'Address': '2-1-1 Minami-Aoyama, Minato-ku', 'Address2': None, 'City': 'Tokyo', 'ContactEmail': '', 'ContactFax': None, 'ContactPhone': None, 'Country': 'JAPAN', 'DBAs': None, 'EquipmentItems': [], '...</msg>
+<status status="PASS" starttime="20231101 15:53:49.217" endtime="20231101 15:53:49.217"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>@{get_from_list_3}</var>
+<arg>${get_from_list_2}</arg>
+<arg>City</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20231101 15:53:49.247" level="INFO">@{get_from_list_3} = [ Tokyo ]</msg>
+<status status="PASS" starttime="20231101 15:53:49.217" endtime="20231101 15:53:49.247"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${res}</var>
+<arg>${get_from_list_3}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231101 15:53:49.247" level="INFO">${res} = Tokyo</msg>
+<status status="PASS" starttime="20231101 15:53:49.247" endtime="20231101 15:53:49.247"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${res}</arg>
+<arg>Tokyo</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231101 15:53:49.247" endtime="20231101 15:53:49.247"/>
+</kw>
+<status status="PASS" starttime="20231101 15:53:48.280" endtime="20231101 15:53:49.247"/>
 </test>
-<status status="FAIL" starttime="20231101 15:02:29.291" endtime="20231101 15:02:30.853"/>
+<status status="PASS" starttime="20231101 15:53:48.100" endtime="20231101 15:53:49.247"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Test Case Get Validation">Test Case Get Validation</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Case Validation 2">Test Case Validation 2</stat>
 </suite>
 </statistics>
 <errors>
